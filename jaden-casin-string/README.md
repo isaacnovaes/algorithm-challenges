@@ -6,7 +6,7 @@ Your task is to convert strings to how they would be written by Jaden Smith. The
 
 --- 
 
-It is a Code Wars challenge. By solving it, I could practise string methods, which are really important and efficient to deal with arrays in JS. Also, I have learned a new string method:
+It is a Code Wars challenge. By solving it, I could practise string methods, which are really important and efficient to deal with strings in JS. Also, I have learned a new string method:
 ``` js
 String.fromCharCode(SCIICode, SCIICode, SCIICode, ... )
 
