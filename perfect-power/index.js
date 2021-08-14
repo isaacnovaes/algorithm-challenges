@@ -7,27 +7,25 @@ var isPP = function (n) {
 		--maxNumberK;
 		++i;
 	}
-	const divisorsOfN = [];
+	possibleExponentsOfK.reverse();
+
+	const divisorsOfN = [],
+		lengthPossibleExponentsOfK = possibleExponentsOfK.length;
 	divisorsOfN[0] = 1;
 	let integer = 2,
 		index = 1;
-	while (integer <= n) {  // Fix it! too many iterations
+	while (integer <= n) {
 		if (n % integer == 0) {
 			divisorsOfN[index] = integer;
+			for (let i = 0; i < lengthPossibleExponentsOfK; i++) {
+				if (divisorsOfN[index] ** possibleExponentsOfK[i] == n) {
+					return [divisorsOfN[index], possibleExponentsOfK[i]];
+				}
+			}
 			++index;
 		}
 		++integer;
 	}
-	const lengthDivisors = divisorsOfN.length,
-		lengthPossibleExponentsOfK = possibleExponentsOfK.length;
-	for (let i = 0; i < lengthDivisors; i++) {
-		for (let j = 0; j < lengthPossibleExponentsOfK; j++) {
-			if (divisorsOfN[i] ** possibleExponentsOfK[j] == n) {
-				return [divisorsOfN[i], possibleExponentsOfK[j]];
-			}
-		}
-	}
 	return null;
 };
 
-console.log(isPP(1023));
