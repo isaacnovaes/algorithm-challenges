@@ -1,7 +1,7 @@
 function firstNonRepeatingLetter(string) {
 	const stringArray = string.slice().split("");
 	const repeatedChar = [];
-	let length = stringArray.length;
+	const length = stringArray.length;
 	for (let i = 0; i < length; i++) {
 		for (let j = i + 1; j < length; j++) {
 			if (stringArray[i].toLowerCase() === stringArray[j].toLowerCase()) {
